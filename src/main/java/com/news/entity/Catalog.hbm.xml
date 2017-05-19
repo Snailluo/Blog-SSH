@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+    <class name="com.news.entity.Catalog" table="catalog">
+        <!-- id标签
+        	name：实体类中的id属性名称
+        	column：对应的要生成的表中的字段的名称
+        -->
+        <id name="caid" column="caid">
+            <!-- id增长策略 -->
+            <generator class="native"></generator>
+        </id>
+        <!-- 配置类中的其他属性与表的字段对应 -->
+        <property name="caname" column="caname"></property>
+        <property name="canumber" column="canumber"></property>
+        <property name="castate" column="castate"></property>
+        
+        <!-- 需要表示栏目下所属的所有文章 
+        	用SET标签表示栏目下的所有文章
+        	name属性：为栏目实体类中表示所有文章的set集合的名称
+        -->
+        <set name="setArticle">
+            <key column="canumber"></key>
+            <one-to-many class="com.news.entity.Article"/>
+        </set>
+    </class>
+</hibernate-mapping>

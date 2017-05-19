@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+    <class>
+        <!-- id标签
+        	name：实体类中的id属性名称
+        	column：对应的要生成的表中的字段的名称
+        -->
+        <id name="imid" column="imid">
+            <!-- id增长策略 -->
+            <generator class="native"></generator>
+        </id>
+        <!-- 配置类中的其他属性与表的字段对应 -->
+        <property name="imtitle" column="imtitle"></property>
+        <property name="imname" column="imname"></property>
+        <property name="imdate" column="imdate"></property>
+        <property name="imstate" column="imstate"></property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <!-- 告诉struts，action由谁来创建，默认就是spring -->
+    <constant name="struts.objectFactory" value="spring" />
+    
+    <!-- 零配置 -->
+    <!--  
+    <constant name="struts.convention.package.locators" value="news" />
+    <constant name="struts.convention.package.locators.basePackage" value="com" />
+    -->
+    
+    <!-- 模式为开发模式，修改xml配置文件会自动重启，项目交付的时候设置为false,以免影响性能 -->
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    
+    <!-- struts2的默认常量 -->
+    <!-- 
+    	struts.i18n.encoding = UTF-8
+		编码过滤器    
+     -->
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+    <!-- Add packages here -->
+
+	<package name="default" namespace="/" extends="struts-default">
+	    
+	    <!-- 全局结果页面 -->
+	    <global-results>
+	        <!-- 返回全查页面 -->
+	        <result name="list"	type="redirectAction">Manager_findAll</result>
+	    </global-results>
+	    
+		
+		<action name="Manager_*" class="managerAction"  method="{1}">
+		    <result name="main">/main.jsp</result>
+		    <result name="login">/login.jsp</result>
+		    <result name="edit">/maAddOrUpdate.jsp</result>
+		    <result name="findall">/manager_list.jsp</result>
+		</action>
+		
+	</package>
+	
+	
+	
+</struts>
