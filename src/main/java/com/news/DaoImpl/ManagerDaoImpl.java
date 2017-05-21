@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.news.Dao.ManagerDao;
@@ -21,7 +21,7 @@ public class ManagerDaoImpl implements ManagerDao{
 	@Override
 	public boolean login(String name, String pwd) {
 
-		List<Manager> list = hibernateTemplate.find("from Manager where managerName=? and managerPwd=?",name,pwd);
+		List<Manager> list = (List<Manager>) hibernateTemplate.find("from Manager where managerName=? and managerPwd=?",name,pwd);
 		
 		if(list.size() > 0)
 			return true;
@@ -72,7 +72,7 @@ public class ManagerDaoImpl implements ManagerDao{
 	@Override
 	public List<Manager> findall() {
 		
-		List<Manager> list = hibernateTemplate.find("from Manager");
+		List<Manager> list = (List<Manager>) hibernateTemplate.find("from Manager");
 		return list;
 		
 	}
