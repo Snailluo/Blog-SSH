@@ -29,6 +29,11 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 	    
+	    <!-- 声明拦截器 -->
+	    <interceptors>
+	        <interceptor name="loginInterceptor" class="com.news.interceptor.LoginInterceptor"></interceptor>
+	    </interceptors>
+	    
 	    <!-- 全局结果页面 -->
 	    <global-results>
 	        <!-- 返回全查页面 -->
@@ -37,6 +42,15 @@
 	    
 		
 		<action name="Manager_*" class="managerAction"  method="{1}">
+		    
+		    <!-- 使用自定义的拦截器 -->
+		    <interceptor-ref name="loginInterceptor">
+		        <!-- 指定某些方法不进行拦截 -->
+		        <param name="excludeMethods">login</param>
+		    </interceptor-ref>
+		    <!-- 使用系统默认的拦截器 -->
+		    <interceptor-ref name="defaultStack"></interceptor-ref>
+		    
 		    <result name="main">/main.jsp</result>
 		    <result name="login">/login.jsp</result>
 		    <result name="edit">/maAddOrUpdate.jsp</result>

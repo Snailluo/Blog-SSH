@@ -3,7 +3,9 @@ package com.news.action;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -44,6 +46,8 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	public String login() {
 		
 		if(mService.login(manager)){
+			HttpServletRequest request = ServletActionContext.getRequest();
+			request.getSession().setAttribute("managerName",manager.getManagerName());
 			return "main";
 		}
 		
