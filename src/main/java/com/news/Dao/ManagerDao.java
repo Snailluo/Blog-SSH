@@ -54,5 +54,19 @@ public interface ManagerDao {
 	 * @return
 	 */
 	public boolean addorupdate(Manager manager);
+
+	/**
+	 * 查询总纪录数
+	 * @return
+	 */
+	public int findCount();
+
+	/**
+	 * 分页查询
+	 * @param pageSize 
+	 * @param begin 
+	 * @return
+	 */
+	public List<Manager> findLimit(int begin, int pageSize);
 	
 }

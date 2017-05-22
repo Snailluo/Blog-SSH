@@ -2,6 +2,7 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!doctype html>
 <html lang="en">
@@ -112,36 +113,61 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <s:iterator var="m" value="list">
+                                    
+                                    <c:forEach items="${pageBean.list }" var="manager">
                                     	<tr class="odd">
                                             <td class="center">
-                                            	<s:property value="#m.mid"/>
+                                            	<c:out value="${manager.mid }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#m.managerName"/>
+                                            	<c:out value="${manager.managerName }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#m.managerPwd"/>
+                                            	<c:out value="${manager.managerPwd }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#m.managerMstate"/>
+                                            	<c:out value="${manager.managerMstate }"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=<s:property value="#m.mid"/>">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=<s:property value="#m.mid"/>">删除</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=${manager.mid }">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=${manager.mid }">删除</a></td>
                                         </tr>
-                                    </s:iterator>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <nav aria-label="Page navigation">
                             <ul class="pager">
-                            <!-- 
-                              <li><a href="ManagerServlet?type=findall&nowpage=1" style="color: #EB5E28">首页</a></li>
-                              <li><a href="ManagerServlet?type=findall&nowpage=nowpage-1" style="color: #EB5E28">上一页</a></li>
-                              <li><a href="ManagerServlet?type=findall&nowpage=nowpage+1" style="color: #EB5E28">下一页</a></li>
-                              <li><a href="ManagerServlet?type=findall&nowpage=pagecount" style="color: #EB5E28">末页</a></li>
-                             -->
+                            
+                            <c:if test="${pageBean.page != 1 && pageBean.page != pageBean.pageCount}">
+                            	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
+                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+                              	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+                            </c:if>
+                            
+                            <c:if test="${pageBean.page == 1 && pageBean.page != pageBean.pageCount}">
+                            	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
+                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+                              	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+                            </c:if>
+                            
+                            <c:if test="${pageBean.page != 1 && pageBean.page == pageBean.pageCount}">
+                            	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
+                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+                              	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+                            </c:if>
+                            
+                            <c:if test="${pageBean.page == 1 && pageBean.page == pageBean.pageCount}">
+                            	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
+                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+                              	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+                            </c:if>
+                            
+                            
                             </ul>
                         </nav>
                     </div>

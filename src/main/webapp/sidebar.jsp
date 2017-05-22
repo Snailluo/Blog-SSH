@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath }/Manager_findAll.action">
+                    <a href="${pageContext.request.contextPath }/Manager_findAllPage.action">
                         <i class="ti-user"></i>
                         <p>管理员列表</p>
                     </a>

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 
 import com.news.Service.ManagerService;
 import com.news.entity.Manager;
+import com.news.util.PageBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -32,6 +33,15 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return manager;
 	}
 	
+	//使用属性封装获取当前页
+	private Integer page = 1;
+	public Integer getPage() {
+		return page;
+	}
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	//向值栈中放Manager对象
 	public Manager getManager() {
 		return manager;
@@ -42,7 +52,8 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	public List<Manager> getList() {
 		return mList;
 	}
-
+	
+	
 	public String login() {
 		
 		if(mService.login(manager)){
@@ -59,6 +70,15 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		mList = mService.findAll();
 		
 		return "findall";
+	}
+	
+	public String findAllPage() {
+		
+		PageBean pageBean = mService.findAllLimit(page);
+		
+		ServletActionContext.getRequest().setAttribute("pageBean", pageBean);
+		
+		return "findallpage";
 	}
 	
 	public String findById() {
