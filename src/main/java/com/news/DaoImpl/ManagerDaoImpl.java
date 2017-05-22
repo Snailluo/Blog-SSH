@@ -2,22 +2,19 @@ package com.news.DaoImpl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.orm.hibernate5.HibernateTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.news.Dao.ManagerDao;
 import com.news.entity.Manager;
 
-@Repository(value="managerDao")
-public class ManagerDaoImpl implements ManagerDao{
+@SuppressWarnings("unchecked")
+public class ManagerDaoImpl extends HibernateDaoSupport implements ManagerDao{
 	
 	//得到hibernateTemplate对象
-	@Resource(name="hibernateTemplate")
-	private HibernateTemplate hibernateTemplate;
+//	@Resource(name="hibernateTemplate")
+	private HibernateTemplate hibernateTemplate = this.getHibernateTemplate();
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public boolean login(String name, String pwd) {
 
@@ -68,7 +65,6 @@ public class ManagerDaoImpl implements ManagerDao{
 		
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Manager> findall() {
 		

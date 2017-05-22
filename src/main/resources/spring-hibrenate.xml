@@ -52,8 +52,14 @@
     </bean>
     
     <!-- 创建hibernateTemplate对象 -->
+    <!--  
     <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
-        <!-- 注入sessionFactory -->
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    -->
+    
+    <!-- 使用HibernateDaoSupport -->
+    <bean id="managerDao" class="com.news.DaoImpl.ManagerDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
