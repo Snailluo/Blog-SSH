@@ -126,8 +126,8 @@
                                             <td class="center">
                                             	<s:property value="#m.managerMstate"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=${m.mid}">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=${m.mid}">删除</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=<s:property value="#m.mid"/>">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=<s:property value="#m.mid"/>">删除</a></td>
                                         </tr>
                                     </s:iterator>
                                     </tbody>
