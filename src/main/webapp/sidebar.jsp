@@ -36,21 +36,22 @@
                 <li>
                     <a href="CatalogServlet?type=findall">
                         <i class="ti-view-list-alt"></i>
-                        <p>栏目列表</p>
+                        <p>文章列表</p>
                     </a>
                 </li>
                 <li>
                     <a href="icons.html">
                         <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
+                        <p>栏目列表</p>
                     </a>
                 </li>
                 <li>
                     <a href="maps.html">
                         <i class="ti-map"></i>
-                        <p>Maps</p>
+                        <p>图片管理</p>
                     </a>
                 </li>
+                <!-- 
                 <li>
                     <a href="notifications.html">
                         <i class="ti-bell"></i>
@@ -63,6 +64,7 @@
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
+                -->
             </ul>
     	</div>
     </div>

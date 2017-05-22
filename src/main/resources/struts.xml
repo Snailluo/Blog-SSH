@@ -34,13 +34,18 @@
 	        <interceptor name="loginInterceptor" class="com.news.interceptor.LoginInterceptor"></interceptor>
 	    </interceptors>
 	    
+	    <default-action-ref name="index"></default-action-ref>
+	    
 	    <!-- 全局结果页面 -->
 	    <global-results>
 	        <!-- 返回全查页面 -->
 	        <result name="list"	type="redirectAction">Manager_findAll</result>
 	    </global-results>
 	    
-		
+		<action name="index">
+			<result type="dispatcher">login.jsp</result>
+		</action>
+	    
 		<action name="Manager_*" class="managerAction"  method="{1}">
 		    
 		    <!-- 使用自定义的拦截器 -->

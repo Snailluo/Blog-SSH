@@ -81,7 +81,7 @@
 						<li>
                             <a href="#">
 								<i class="ti-user"></i>
-								<p>admin</p>
+								<p>${sessionScope.managerName }</p>
                             </a>
                         </li>
                     </ul>

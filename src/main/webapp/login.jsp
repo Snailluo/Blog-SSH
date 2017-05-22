@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <form action="Manager_login.action">
+  <form action="Manager_login.action" method="post">
     Username:
     <input type="text" name="managerName">
     <br/>
