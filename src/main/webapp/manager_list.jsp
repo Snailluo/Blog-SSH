@@ -138,34 +138,10 @@
                         </div>
                         <nav aria-label="Page navigation">
                             <ul class="pager">
-                            
-                            <c:choose>
-                            	<c:when test="${pageBean.page != 1 && pageBean.page != pageBean.pageCount}">
-                            		<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                              	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
-                            	</c:when>
-                            	<c:when test="${pageBean.page == 1 && pageBean.page != pageBean.pageCount}">
-                            		<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                              	<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
-                            	</c:when>
-                            	<c:when test="${pageBean.page != 1 && pageBean.page == pageBean.pageCount}">
-                            		<li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                                <li><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                              	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
-                            	</c:when>
-                            	<c:otherwise>
-                            		<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                                <li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                              	<li class="disabled"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
-                            	</c:otherwise>
-                            </c:choose>
-                            
+	                            <li id="frist"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
+	                            <li id="pre"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+	                            <li id="next"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+	                          	<li id="last"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -208,6 +184,7 @@
 
 </body>
 
+	
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -229,6 +206,28 @@
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
+
+	<!-- 翻页按钮的js实现 -->
+	<script type="text/javascript">
+		var page = ${pageBean.page };
+		var pageCount = ${pageBean.pageCount };
+
+		$(document).ready(function(){
+			if(page == 1){
+				//首页
+				$("#frist").addClass("disabled");
+				$("#pre").addClass("disabled");
+				
+			}
+			if(page == pageCount){
+				//末页
+				$("#next").addClass("disabled");
+				$("#last").addClass("disabled");
+			}
+		});
+
+		
+	</script>
 
 
 </html>
