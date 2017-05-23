@@ -19,7 +19,6 @@ import com.opensymphony.xwork2.ModelDriven;
 @Controller(value="managerAction")
 @Scope("prototype")
 public class ManagerAction extends ActionSupport implements ModelDriven<Manager>{
-	
 	private static final long serialVersionUID = 1L;
 	
 	@Resource(name="managerService")
@@ -53,6 +52,12 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return mList;
 	}
 	
+	//向值栈中放入pagebean对象
+	private PageBean pageBean;
+	public PageBean getPageBean() {
+		return pageBean;
+	}
+	
 	
 	public String login() {
 		
@@ -68,16 +73,12 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	public String findAll() {
 		
 		mList = mService.findAll();
-		
 		return "findall";
 	}
 	
 	public String findAllPage() {
 		
-		PageBean pageBean = mService.findAllLimit(page);
-		
-		ServletActionContext.getRequest().setAttribute("pageBean", pageBean);
-		
+		pageBean = mService.findAllLimit(page);
 		return "findallpage";
 	}
 	
