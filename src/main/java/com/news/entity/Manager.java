@@ -1,22 +1,18 @@
 package com.news.entity;
 
 public class Manager {
-	
 	private Integer mid;
 	private String managerName;
 	private String managerPwd;
 	private String managerMstate;
-	
 	public Manager() {
 		super();
 	}
-
 	public Manager(String managerName, String managerPwd, String managerMstate) {
 		this.managerName = managerName;
 		this.managerPwd = managerPwd;
 		this.managerMstate = managerMstate;
 	}
-	
 	public Integer getMid() {
 		return mid;
 	}
@@ -41,8 +37,4 @@ public class Manager {
 	public void setManagerMstate(String managerMstate) {
 		this.managerMstate = managerMstate;
 	}
-
-	
-	
-
 }

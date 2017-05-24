@@ -15,7 +15,11 @@ import com.news.util.PageBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-
+/**
+ * 
+ * @author xnlo
+ * 
+ */
 @Controller(value="managerAction")
 @Scope("prototype")
 public class ManagerAction extends ActionSupport implements ModelDriven<Manager>{
@@ -24,7 +28,7 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	@Resource(name="managerService")
 	public ManagerService mService;
 	
-	//模型驱动封装获取表单数据
+	/*  模型驱动封装获取表单数据   */
 	private Manager manager = new Manager();
 	
 	@Override

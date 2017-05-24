@@ -64,22 +64,21 @@ public class ManagerServiceImpl implements ManagerService{
 
 	@Override
 	public PageBean findAllLimit(Integer page) {
-		
-		//总记录数
 		int totalCount = mdao.findCount();
-		//每页记录数
 		int pageSize = 5;
-		//总页数
 		int pageCount = 0;
+		/**
+		 * 三元运算
+		 * if 总记录数能整除每页记录数
+		 *     总页数 = 总记录数 / 每页记录数
+		 * else
+		 *     总页数 = 总记录数 / 每页记录数 + 1
+		 */
 		pageCount = (totalCount % pageSize == 0) ? (totalCount/pageSize) : (totalCount/pageSize + 1);
-		//开始位置
+		
 		int begin = (page-1)*pageSize;
-		//每页的数据集合list
 		List<Manager> list = mdao.findLimit(begin,pageSize);
-		
-		PageBean pageBean = new PageBean(pageCount, page, totalCount, list);
-		
-		return pageBean;
+		return new PageBean(pageCount, page, totalCount, list);
 	}
 
 	
