@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="${pageContext.request.contextPath }/Catalog_findAll.action">
                         <i class="ti-pencil-alt2"></i>
                         <p>栏目列表</p>
                     </a>

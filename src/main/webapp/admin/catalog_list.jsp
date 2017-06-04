@@ -113,23 +113,27 @@
                                     </thead>
                                     <tbody>
                                     
-                                    <c:forEach items="${clist }" var="catalog">
+                                    <s:iterator value="cList" var="catalog">
                                     	<tr class="odd">
                                             <td class="center">
-                                            	<c:out value="${catalog.caid }"/>
+                                            	<s:property value="#catalog.caid"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${catalog.caname }"/>
+                                            	<s:property value="#catalog.caname"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${catalog.canumber }"/>
+                                            	<s:property value="#catalog.canumber"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${catalog.castate }"/>
+                                            	<s:property value="#catalog.castate"/>
                                             </td>
                                             <td class="center"><a href="${pageContext.request.contextPath }/Catalog_findById.action?mid=${catalog.caid }">编辑</a></td>
                                             <td class="center"><a href="${pageContext.request.contextPath }/Catalog_delete.action?mid=${catalog.caid }">删除</a></td>
                                         </tr>
+                                    </s:iterator>
+                                    
+                                    <c:forEach items="${clist }" var="catalog">
+                                    	
                                     </c:forEach>
                                     </tbody>
                                 </table>
