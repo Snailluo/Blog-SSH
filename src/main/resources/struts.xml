@@ -56,10 +56,13 @@
 		    <!-- 使用系统默认的拦截器 -->
 		    <interceptor-ref name="defaultStack"></interceptor-ref>
 		    
-		    <result name="main">/main.jsp</result>
-		    <result name="login">/login.jsp</result>
-		    <result name="edit">/maAddOrUpdate.jsp</result>
-		    <result name="findallpage">/manager_list.jsp</result>
+		    <result name="main">/admin/main.jsp</result>
+		    <result name="login">/admin/login.jsp</result>
+		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
+		    <result name="findallpage">/admin/manager_list.jsp</result>
+		</action>
+		<action name="Catalog_*" class="CatalogAction" method="{1}">
+		    <result name="findall">/admin/catalog_list.jsp</result>
 		</action>
 		
 	</package>

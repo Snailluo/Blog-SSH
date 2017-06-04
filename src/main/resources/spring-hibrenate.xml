@@ -55,6 +55,9 @@
     <bean id="managerDao" class="com.news.DaoImpl.ManagerDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+    <bean id="CatalogDao" class="com.news.DaoImpl.CatalogDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" 
