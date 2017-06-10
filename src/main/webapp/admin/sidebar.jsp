@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="${pageContext.request.contextPath }/Manager_findById.action?${sessionScope.managerName }">
                         <i class="ti-user"></i>
                         <p>用户信息</p>
                     </a>
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="CatalogServlet?type=findall">
+                    <a href="${pageContext.request.contextPath }/Article_findAll.action">
                         <i class="ti-view-list-alt"></i>
                         <p>文章列表</p>
                     </a>

@@ -32,37 +32,43 @@
 	    <!-- 声明拦截器 -->
 	    <interceptors>
 	        <interceptor name="loginInterceptor" class="com.news.interceptor.LoginInterceptor"></interceptor>
+	        <interceptor-stack name="myStack">
+	        	<!-- 使用自定义的拦截器 -->
+	        	<interceptor-ref name="loginInterceptor"></interceptor-ref>
+		    	<!-- 使用系统默认的拦截器 -->
+		    	<interceptor-ref name="defaultStack"></interceptor-ref>
+	        </interceptor-stack>
 	    </interceptors>
+	    
+	    <default-interceptor-ref name="myStack"></default-interceptor-ref>
 	    
 	    <default-action-ref name="index"></default-action-ref>
 	    
 	    <!-- 全局结果页面 -->
 	    <global-results>
-	        <!-- 返回全查页面 -->
-	        <result name="list"	type="redirectAction">Manager_findAll</result>
+	        <!-- 管理员全查页面 -->
+	        <result name="login">/admin/login.jsp</result>
+	        <result name="mlist" type="redirectAction">Manager_findAllPage</result>
 	    </global-results>
 	    
 		<action name="index">
-			<result type="dispatcher">login.jsp</result>
+			<result type="dispatcher">/admin/login.jsp</result>
 		</action>
 	    
 		<action name="Manager_*" class="managerAction"  method="{1}">
-		    
-		    <!-- 使用自定义的拦截器 -->
-		    <interceptor-ref name="loginInterceptor">
-		        <!-- 指定某些方法不进行拦截 -->
-		        <param name="excludeMethods">login</param>
-		    </interceptor-ref>
-		    <!-- 使用系统默认的拦截器 -->
-		    <interceptor-ref name="defaultStack"></interceptor-ref>
-		    
+		
+			<interceptor-ref name="myStack">
+				<param name="excludeMethods">login</param>
+			</interceptor-ref>
+			
 		    <result name="main">/admin/main.jsp</result>
-		    <result name="login">/admin/login.jsp</result>
 		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
 		    <result name="findallpage">/admin/manager_list.jsp</result>
 		</action>
+		
 		<action name="Catalog_*" class="CatalogAction" method="{1}">
 		    <result name="findall">/admin/catalog_list.jsp</result>
+		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
 		</action>
 		
 	</package>

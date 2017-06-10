@@ -127,14 +127,11 @@
                                             <td class="center">
                                             	<s:property value="#catalog.castate"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_findById.action?mid=${catalog.caid }">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_delete.action?mid=${catalog.caid }">删除</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_findById.action?mid=<s:property value="#catalog.caid"/>">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_delete.action?mid=<s:property value="#catalog.caid"/>">删除</a></td>
                                         </tr>
                                     </s:iterator>
                                     
-                                    <c:forEach items="${clist }" var="catalog">
-                                    	
-                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

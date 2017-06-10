@@ -18,7 +18,6 @@ public class LoginInterceptor extends MethodFilterInterceptor{
 		Object obj = request.getSession().getAttribute("managerName");
 		
 		if(obj != null) {
-			//session中存在用户名，进行放行操作
 			return invocation.invoke();
 		} else {
 			return "login";

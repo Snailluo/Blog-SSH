@@ -15,11 +15,7 @@ import com.news.util.PageBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-/**
- * 
- * @author xnlo
- * 
- */
+
 @Controller(value="managerAction")
 @Scope("prototype")
 public class ManagerAction extends ActionSupport implements ModelDriven<Manager>{
@@ -28,7 +24,7 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	@Resource(name="managerService")
 	public ManagerService mService;
 	
-	/*  模型驱动封装获取表单数据   */
+	/* 妯″瀷椹卞姩鑾峰彇Manager鏁版嵁   */
 	private Manager manager = new Manager();
 	
 	@Override
@@ -36,7 +32,7 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return manager;
 	}
 	
-	//使用属性封装获取当前页
+	//灞炴�у皝瑁呰幏寰楀綋鍓嶉〉
 	private Integer page = 1;
 	public Integer getPage() {
 		return page;
@@ -45,18 +41,18 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		this.page = page;
 	}
 
-	//向值栈中放Manager对象
+	//鍚戝�兼爤涓斁鍏anager鏁版嵁
 	public Manager getManager() {
 		return manager;
 	}
 	
-	//向值栈中放入list对象
+	//锟斤拷值栈锟叫凤拷锟斤拷list锟斤拷锟斤拷
 	private List<Manager> mList;
 	public List<Manager> getList() {
 		return mList;
 	}
 	
-	//向值栈中放入pagebean对象
+	//灏唒agebean瀵硅薄鏀惧叆鍊兼爤
 	private PageBean pageBean;
 	public PageBean getPageBean() {
 		return pageBean;
@@ -95,14 +91,14 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	
 	public String addOrUpdate() {
 		if(mService.addOrUpdate(manager)){
-			return "list";
+			return "mlist";
 		}
 		return "edit";
 	}
 	
 	public String delete() {
 		mService.delete(manager);
-		return "list";
+		return "mlist";
 	}
 
 
