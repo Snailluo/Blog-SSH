@@ -40,8 +40,7 @@ public class CatalogServiceImpl implements CatalogService{
 
 	@Override
 	public Catalog findById(Catalog catalog) {
-		// TODO Auto-generated method stub
-		return null;
+		return cDao.findbyid(catalog.getCaid());
 	}
 	
 	@Override

@@ -9,19 +9,6 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import com.news.Dao.ManagerDao;
 import com.news.entity.Manager;
 
-/**
- * 
- * {@link ManagerDao}的实现类，对Manager类进行crud操作
- * 继承{@link org.springframework.orm.hibernate5.support.HibernateDaoSupport}类
- * 使用{@link #getHibernateTemplate()}方法传入 {@link HibernateTemplate} 对象
- * 
- * Spring-bean
- * 使用配置文件的方式创建bean对象，bean对象id为"managerDao"
- * 
- * @author xnlo
- * @see Manager
- * @see ManagerDao
- */
 @SuppressWarnings("unchecked")
 public class ManagerDaoImpl extends HibernateDaoSupport implements ManagerDao{
 	

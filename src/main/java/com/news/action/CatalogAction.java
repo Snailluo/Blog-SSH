@@ -50,7 +50,7 @@ public class CatalogAction extends ActionSupport implements ModelDriven<Catalog>
 	
 	public String addOrUpdate() {
 		if(cService.addOrUpdate(catalog)){
-			return "list";
+			return "clist";
 		}
 		return "edit";
 	}

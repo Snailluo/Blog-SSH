@@ -1,7 +1,7 @@
+<%@page import="com.news.entity.Manager"%>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
 <html lang="en">
@@ -106,32 +106,31 @@
                                         <tr>
                                             <th>ID</th>
                                         	<th>Name</th>
-                                        	<th>Number</th>
+                                        	<th>Password</th>
                                         	<th>Mstate</th>
                                         	<th colspan="2">编辑</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     
-                                    <s:iterator value="cList" var="catalog">
+                                    <c:forEach items="${pageBean.list }" var="manager">
                                     	<tr class="odd">
                                             <td class="center">
-                                            	<s:property value="#catalog.caid"/>
+                                            	<c:out value="${manager.mid }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#catalog.caname"/>
+                                            	<c:out value="${manager.managerName }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#catalog.canumber"/>
+                                            	<c:out value="${manager.managerPwd }"/>
                                             </td>
                                             <td class="center">
-                                            	<s:property value="#catalog.castate"/>
+                                            	<c:out value="${manager.managerMstate }"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_findById.action?caid=<s:property value="#catalog.caid"/>">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Catalog_delete.action?caid=<s:property value="#catalog.caid"/>">删除</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=${manager.mid }">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=${manager.mid }">删除</a></td>
                                         </tr>
-                                    </s:iterator>
-                                    
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

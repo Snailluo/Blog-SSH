@@ -4,50 +4,51 @@ import java.util.List;
 
 import com.news.entity.Manager;
 
+@SuppressWarnings("rawtypes")
 public class PageBean {
 
 	/** 
-	 * ·ÖÒ³ºóµÄ×ÜÒ³Êý
+	 * ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½
 	 */
 	private Integer pageCount;
 	/** 
-	 * Ã¿Ò»Ò³µÄ¼ÇÂ¼Êý
+	 * Ã¿Ò»Ò³ï¿½Ä¼ï¿½Â¼ï¿½ï¿½
 	 */
 	private Integer pageSize;
 	/**
-	 * µ±Ç°Ò³
+	 * ï¿½ï¿½Ç°Ò³
 	 */
 	private Integer page;
 	/**
-	 * ×Ü¼ÇÂ¼Êý
+	 * ï¿½Ü¼ï¿½Â¼ï¿½ï¿½
 	 */
 	private Integer totalCount;
 	/**
-	 * ·ÖÒ³²éÑ¯µÄ¿ªÊ¼Î»ÖÃ 
+	 * ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯ï¿½Ä¿ï¿½Ê¼Î»ï¿½ï¿½ 
 	 */
 	private Integer begin;
 	/**
-	 * ·ÖÒ³²éÑ¯ºóµÄÊý¾Ýlist¼¯ºÏ 
+	 * ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½ 
 	 */
-	private List<Manager> list;
+	private List list;
 	
 	/**
-	 * ÎÞ²ÎµÄ¹¹Ôìº¯Êý 
+	 * ï¿½Þ²ÎµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ 
 	 */
 	public PageBean() {
 		super();
 	}
 	
 	/**
-	 * ÓÐ²ÎµÄ¹¹Ôìº¯Êý
-	 * ´«ÈëÒ³ÃæÒªÏÔÊ¾µÄÊý¾Ý
+	 * ï¿½Ð²ÎµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
-	 * @param pageCount ×ÜÒ³Êý
-	 * @param page µ±Ç°Ò³
-	 * @param totalCount ×Ü¼ÇÂ¼Êý
-	 * @param list ·ÖÒ³²éÑ¯ºóµÄÊý¾ÝList¼¯ºÏ
+	 * @param pageCount ï¿½ï¿½Ò³ï¿½ï¿½
+	 * @param page ï¿½ï¿½Ç°Ò³
+	 * @param totalCount ï¿½Ü¼ï¿½Â¼ï¿½ï¿½
+	 * @param list ï¿½ï¿½Ò³ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Listï¿½ï¿½ï¿½ï¿½
 	 */
-	public PageBean(Integer pageCount, Integer page, Integer totalCount, List<Manager> list) {
+	public PageBean(Integer pageCount, Integer page, Integer totalCount, List list) {
 		super();
 		this.pageCount = pageCount;
 		this.page = page;
@@ -56,7 +57,7 @@ public class PageBean {
 	}
 	
 	/**
-	 * ´«ÈëËùÓÐÊý¾ÝµÄ¹¹Ôìº¯Êý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½
 	 * 
 	 * @param pageCount
 	 * @param pageSize
@@ -66,7 +67,7 @@ public class PageBean {
 	 * @param list
 	 */
 	public PageBean(Integer pageCount, Integer pageSize, Integer page, Integer totalCount, Integer begin,
-			List<Manager> list) {
+			List list) {
 		super();
 		this.pageCount = pageCount;
 		this.pageSize = pageSize;
@@ -106,10 +107,10 @@ public class PageBean {
 	public void setBegin(Integer begin) {
 		this.begin = begin;
 	}
-	public List<Manager> getList() {
+	public List getList() {
 		return list;
 	}
-	public void setList(List<Manager> list) {
+	public void setList(List list) {
 		this.list = list;
 	}
 	

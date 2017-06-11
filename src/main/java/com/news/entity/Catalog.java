@@ -10,8 +10,6 @@ public class Catalog {
 	private String canumber;
 	private String castate;
 	
-	//设置栏目实体类中表示多篇文章
-	//Hibernate要求使用SET集合表示多个数据
 	private Set<Article> setArticle = new HashSet<Article>();
 	public Set<Article> getSetArticle() {
 		return setArticle;

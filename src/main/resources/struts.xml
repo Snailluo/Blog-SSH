@@ -8,12 +8,6 @@
     <!-- 告诉struts，action由谁来创建，默认就是spring -->
     <constant name="struts.objectFactory" value="spring" />
     
-    <!-- 零配置 -->
-    <!--  
-    <constant name="struts.convention.package.locators" value="news" />
-    <constant name="struts.convention.package.locators.basePackage" value="com" />
-    -->
-    
     <!-- 模式为开发模式，修改xml配置文件会自动重启，项目交付的时候设置为false,以免影响性能 -->
     <constant name="struts.devMode" value="true" />
     <constant name="struts.configuration.xml.reload" value="true" />
@@ -34,7 +28,9 @@
 	        <interceptor name="loginInterceptor" class="com.news.interceptor.LoginInterceptor"></interceptor>
 	        <interceptor-stack name="myStack">
 	        	<!-- 使用自定义的拦截器 -->
-	        	<interceptor-ref name="loginInterceptor"></interceptor-ref>
+	        	<interceptor-ref name="loginInterceptor">
+	        		<param name="excludeMethods">login</param>
+	        	</interceptor-ref>
 		    	<!-- 使用系统默认的拦截器 -->
 		    	<interceptor-ref name="defaultStack"></interceptor-ref>
 	        </interceptor-stack>
@@ -49,6 +45,7 @@
 	        <!-- 管理员全查页面 -->
 	        <result name="login">/admin/login.jsp</result>
 	        <result name="mlist" type="redirectAction">Manager_findAllPage</result>
+	        <result name="clist" type="redirectAction">Catalog_findAll</result>
 	    </global-results>
 	    
 		<action name="index">
@@ -56,11 +53,6 @@
 		</action>
 	    
 		<action name="Manager_*" class="managerAction"  method="{1}">
-		
-			<interceptor-ref name="myStack">
-				<param name="excludeMethods">login</param>
-			</interceptor-ref>
-			
 		    <result name="main">/admin/main.jsp</result>
 		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
 		    <result name="findallpage">/admin/manager_list.jsp</result>
@@ -68,7 +60,7 @@
 		
 		<action name="Catalog_*" class="CatalogAction" method="{1}">
 		    <result name="findall">/admin/catalog_list.jsp</result>
-		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
+		    <result name="edit">/admin/caAddOrUpdate.jsp</result>
 		</action>
 		
 	</package>

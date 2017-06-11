@@ -11,8 +11,7 @@ public class CatalogDaoImpl extends HibernateDaoSupport implements CatalogDao{
 
 	@Override
 	public Catalog findbyid(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getHibernateTemplate().get(Catalog.class, id);
 	}
 
 	@Override
