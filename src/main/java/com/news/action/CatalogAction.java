@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 
 import com.news.Service.CatalogService;
 import com.news.entity.Catalog;
+import com.news.entity.Manager;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -58,6 +59,11 @@ public class CatalogAction extends ActionSupport implements ModelDriven<Catalog>
 	public String delete() {
 		cService.delete(catalog);
 		return "list";
+	}
+	
+	public String toAdd() {
+		catalog = new Catalog();
+		return "edit";
 	}
 
 }

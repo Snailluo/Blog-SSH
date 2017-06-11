@@ -101,7 +101,10 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return "mlist";
 	}
 
-
+	public String toAdd() {
+		manager = new Manager("", "", "");
+		return "edit";
+	}
 	
 
 }

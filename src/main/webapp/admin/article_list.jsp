@@ -104,31 +104,35 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                        	<th>Name</th>
-                                        	<th>Password</th>
-                                        	<th>Mstate</th>
+                                            <th>文章号码</th>
+                                        	<th>文章标题</th>
+                                        	<th>文章作者</th>
+                                        	<th>文章大概内容</th>
+                                        	<th>文章创建时间</th>
                                         	<th colspan="2">编辑</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     
-                                    <c:forEach items="${pageBean.list }" var="manager">
+                                    <c:forEach items="${pageBean.list }" var="article">
                                     	<tr class="odd">
                                             <td class="center">
-                                            	<c:out value="${manager.mid }"/>
+                                            	<c:out value="${article.arnumber }"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${manager.managerName }"/>
+                                            	<c:out value="${article.artitle }"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${manager.managerPwd }"/>
+                                            	<c:out value="${article.aruser }"/>
                                             </td>
                                             <td class="center">
-                                            	<c:out value="${manager.managerMstate }"/>
+                                            	<c:out value="${article.arcontent }"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?mid=${manager.mid }">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?mid=${manager.mid }">删除</a></td>
+                                            <td class="center">
+                                            	<c:out value="${article.artime }"/>
+                                            </td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?arid=${article.arid }">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?arid=${article.arid }">删除</a></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

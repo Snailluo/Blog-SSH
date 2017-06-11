@@ -27,12 +27,8 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public Article findById(Article article) {
-		if(article.getArid() == 0){
-			return new Article();
-		} else {
 			int id = article.getArid();
 			return aDao.findbyid(id); 
-		}
 	}
 
 	@Override

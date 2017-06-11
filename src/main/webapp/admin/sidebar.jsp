@@ -34,15 +34,30 @@
                     </a>
                 </li>
                 <li>
+                    <a href="${pageContext.request.contextPath }/Manager_toAdd.action">
+                        <p>新增管理员</p>
+                    </a>
+                </li>
+                <li>
                     <a href="${pageContext.request.contextPath }/Article_findAll.action">
                         <i class="ti-view-list-alt"></i>
                         <p>文章列表</p>
                     </a>
                 </li>
                 <li>
+                    <a href="${pageContext.request.contextPath }/Article_toAdd.action">
+                        <p>新增文章</p>
+                    </a>
+                </li>
+                <li>
                     <a href="${pageContext.request.contextPath }/Catalog_findAll.action">
                         <i class="ti-pencil-alt2"></i>
                         <p>栏目列表</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath }/Catalog_toAdd.action">
+                        <p>新增栏目</p>
                     </a>
                 </li>
                 <li>
