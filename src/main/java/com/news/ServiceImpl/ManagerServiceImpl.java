@@ -70,6 +70,11 @@ public class ManagerServiceImpl implements ManagerService{
 		return new PageBean(pageCount, page, totalCount, list);
 	}
 
+	@Override
+	public Manager findByName(Manager manager) {
+		return mdao.findbyname(manager);
+	}
+
 	
 
 }

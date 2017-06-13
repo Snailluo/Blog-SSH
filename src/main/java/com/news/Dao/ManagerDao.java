@@ -5,7 +5,7 @@ import java.util.List;
 import com.news.entity.Manager;
 
 /**
- * ManagerÀàµÄDao²ã½Ó¿Ú
+ * Managerï¿½ï¿½ï¿½Daoï¿½ï¿½Ó¿ï¿½
  * 
  * @author xnlo
  * @version 1.0
@@ -13,78 +13,80 @@ import com.news.entity.Manager;
 public interface ManagerDao {
 	
 	/**
-	 * µÇÂ¼·½·¨
-	 * ´«ÈëÓÃ»§Ãû¼°ÃÜÂë½øÐÐÅÐ¶Ï
+	 * ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	 * 
-	 * @param name ÓÃ»§µÄÓÃ»§Ãû
-	 * @param pwd  ÓÃ»§ÃÜÂë
-	 * @return µÇÂ¼³É¹¦·µ»Øtrue µÇÂ¼Ê§°Ü·µ»Øfalse
+	 * @param name ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
+	 * @param pwd  ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @return ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½true ï¿½ï¿½Â¼Ê§ï¿½Ü·ï¿½ï¿½ï¿½false
 	 */
 	boolean login(String name,String pwd);
 	
 	/**
-	 * ¸ù¾Ýid²éÑ¯¼ÇÂ¼
+	 * ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½Â¼
 	 * 
-	 * @param Êý¾ÝµÄidÊôÐÔ
-	 * @return ¸ù¾Ýid²éÑ¯µ½µÄManager¶ÔÏó
+	 * @param ï¿½ï¿½ï¿½Ýµï¿½idï¿½ï¿½ï¿½ï¿½
+	 * @return ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Managerï¿½ï¿½ï¿½ï¿½
 	 */
 	Manager findbyid(int id);
 	
 	/**
-	 * Ôö¼Ó¼ÇÂ¼
+	 * ï¿½ï¿½ï¿½Ó¼ï¿½Â¼
 	 * 
-	 * @param manager ÒªÔö¼ÓµÄManagerÀà
-	 * @return ²Ù×÷³É¹¦·µ»Øtrue£¬²Ù×÷Ê§°Ü·µ»Øfalse
+	 * @param manager Òªï¿½ï¿½ï¿½Óµï¿½Managerï¿½ï¿½
+	 * @return ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü·ï¿½ï¿½ï¿½false
 	 */
 	boolean add(Manager manager);
 	
 	/**
-	 * ¸üÐÂÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
-	 * @param manager °üº¬ÐÞ¸ÄºóÊý¾ÝµÄManagerÀà
-	 * @return ²Ù×÷³É¹¦·µ»Øtrue£¬²Ù×÷Ê§°Ü·µ»Øfalse
+	 * @param manager ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Äºï¿½ï¿½ï¿½ï¿½Ýµï¿½Managerï¿½ï¿½
+	 * @return ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü·ï¿½ï¿½ï¿½false
 	 */
 	boolean update(Manager manager);
 	
 	/**
-	 * É¾³ýÊý¾Ý
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param id
-	 * @return ²Ù×÷³É¹¦·µ»Øtrue£¬²Ù×÷Ê§°Ü·µ»Øfalse
+	 * @return ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü·ï¿½ï¿½ï¿½false
 	 */
 	boolean delete(int id);
 	
 	/**
-	 * ²éÑ¯È«²¿Êý¾Ý
+	 * ï¿½ï¿½Ñ¯È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
-	 * @return ËùÓÐ¼ÇÂ¼µÄlist¼¯ºÏ
+	 * @return ï¿½ï¿½ï¿½Ð¼ï¿½Â¼ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½
 	 */
 	List<Manager> findall();
 	
 	/**
-	 * Ôö¼Ó»òÐÞ¸ÄÊý¾Ý
-	 * ManagerÀàÖÐ°üº¬idÖµ½øÐÐÐÞ¸Ä²Ù×÷
-	 * ²»°üº¬idÖµÔò½øÐÐÌí¼Ó²Ù×÷
+	 * ï¿½ï¿½ï¿½Ó»ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * Managerï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½idÖµï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä²ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÖµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½
 	 * 
-	 * @param manager °üº¬Ìí¼Ó»òÐÞ¸ÄµÄÊý¾ÝµÄManagerÀà
-	 * @return ²Ù×÷³É¹¦·µ»Øtrue£¬²Ù×÷Ê§°Ü·µ»Øfalse
+	 * @param manager ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó»ï¿½ï¿½Þ¸Äµï¿½ï¿½ï¿½ï¿½Ýµï¿½Managerï¿½ï¿½
+	 * @return ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü·ï¿½ï¿½ï¿½false
 	 */
 	boolean addorupdate(Manager manager);
 
 	/**
-	 * ²éÑ¯×Ü¼ÍÂ¼Êý
+	 * ï¿½ï¿½Ñ¯ï¿½Ü¼ï¿½Â¼ï¿½ï¿½
 	 * 
-	 * @return ¸ÃÊý¾Ý±íµÄÈ«²¿¼ÇÂ¼Êý
+	 * @return ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½
 	 */
 	int findCount();
 
 	/**
-	 * ½øÐÐ·ÖÒ³´¦ÀíºóµÄ²éÑ¯È«²¿¼ÇÂ¼
+	 * ï¿½ï¿½ï¿½Ð·ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½Ñ¯È«ï¿½ï¿½ï¿½ï¿½Â¼
 	 * 
-	 * @param pageSize Ã¿Ò³µÄ¼ÇÂ¼Êý
-	 * @param begin ·­Ò³µÄ¿ªÊ¼Î»ÖÃ
-	 * @return ·ÖÒ³ºóÊý¾ÝµÄlist¼¯ºÏ
+	 * @param pageSize Ã¿Ò³ï¿½Ä¼ï¿½Â¼ï¿½ï¿½
+	 * @param begin ï¿½ï¿½Ò³ï¿½Ä¿ï¿½Ê¼Î»ï¿½ï¿½
+	 * @return ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½listï¿½ï¿½ï¿½ï¿½
 	 */
 	List<Manager> findLimit(int begin, int pageSize);
+
+	Manager findbyname(Manager manager);
 	
 }

@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath }/Manager_findById.action?${sessionScope.managerName }">
+                    <a href="${pageContext.request.contextPath }/Manager_findByName.action?managerName=${sessionScope.managerName }">
                         <i class="ti-user"></i>
                         <p>用户信息</p>
                     </a>

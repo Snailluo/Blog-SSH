@@ -56,6 +56,7 @@
 		<action name="Manager_*" class="managerAction"  method="{1}">
 		    <result name="main">/admin/main.jsp</result>
 		    <result name="edit">/admin/maAddOrUpdate.jsp</result>
+		    <result name="info">/admin/maInfo.jsp</result>
 		    <result name="findallpage">/admin/manager_list.jsp</result>
 		</action>
 		

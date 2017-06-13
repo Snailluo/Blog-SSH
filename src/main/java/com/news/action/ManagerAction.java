@@ -46,7 +46,6 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return manager;
 	}
 	
-	//��ֵջ�з���list����
 	private List<Manager> mList;
 	public List<Manager> getList() {
 		return mList;
@@ -83,10 +82,13 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 	}
 	
 	public String findById() {
-		
 		manager =  mService.findById(manager);
-		
 		return "edit";
+	}
+	
+	public String findByName() {
+		manager =  mService.findByName(manager);
+		return "info";
 	}
 	
 	public String addOrUpdate() {

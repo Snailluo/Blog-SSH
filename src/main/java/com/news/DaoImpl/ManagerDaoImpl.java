@@ -3,6 +3,7 @@ package com.news.DaoImpl;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
@@ -77,6 +78,20 @@ public class ManagerDaoImpl extends HibernateDaoSupport implements ManagerDao{
 		List<Manager> list = 
 				(List<Manager>) this.getHibernateTemplate().findByCriteria(criteria, begin, pageSize);
 		return list;
+	}
+
+	@Override
+	public Manager findbyname(Manager manager) {
+		DetachedCriteria criteria = DetachedCriteria.forClass(Manager.class);
+		
+		if(manager.getManagerName()!=null && !"".equals(manager.getManagerName())){
+			criteria.add(Restrictions.eq("managerName", manager.getManagerName()));
+		}
+		
+		List<Manager> list = 
+				(List<Manager>) this.getHibernateTemplate().findByCriteria(criteria);
+		
+		return list.get(0);
 	}
 
 }
