@@ -46,7 +46,7 @@
 	        <result name="login">/admin/login.jsp</result>
 	        <result name="mlist" type="redirectAction">Manager_findAllPage</result>
 	        <result name="clist" type="redirectAction">Catalog_findAll</result>
-	        <result name="alist" type="redirectAction">findAllPage</result>
+	        <result name="alist" type="redirectAction">Article_findAllPage</result>
 	    </global-results>
 	    
 		<action name="index">
