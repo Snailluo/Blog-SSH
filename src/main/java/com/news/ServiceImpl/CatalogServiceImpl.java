@@ -26,7 +26,7 @@ public class CatalogServiceImpl implements CatalogService{
 
 	@Override
 	public boolean addOrUpdate(Catalog catalog) {
-		if(catalog.getCaid() == 0){
+		if(catalog.getCaid() == 0 || catalog.getCaid() == null){
 			return cDao.add(catalog);
 		} else {
 			return cDao.update(catalog);

@@ -20,6 +20,17 @@ public class Article {
 		this.catalog = catalog;
 	}
 	
+	public Article(Integer arid, String arnumber, String artitle, String arcontent, String aruser) {
+		super();
+		this.arid = arid;
+		this.arnumber = arnumber;
+		this.artitle = artitle;
+		this.arcontent = arcontent;
+		this.aruser = aruser;
+	}
+	public Article() {
+		super();
+	}
 	public Integer getArid() {
 		return arid;
 	}

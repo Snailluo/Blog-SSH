@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath }/Article_findAll.action">
+                    <a href="${pageContext.request.contextPath }/Article_findAllPage.action">
                         <i class="ti-view-list-alt"></i>
                         <p>文章列表</p>
                     </a>

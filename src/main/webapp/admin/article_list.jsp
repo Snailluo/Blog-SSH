@@ -104,9 +104,10 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>文章号码</th>
+                                            <th>#</th>
                                         	<th>文章标题</th>
                                         	<th>文章作者</th>
+                                        	<th>所属栏目</th>
                                         	<th>文章大概内容</th>
                                         	<th>文章创建时间</th>
                                         	<th colspan="2">编辑</th>
@@ -117,7 +118,7 @@
                                     <c:forEach items="${pageBean.list }" var="article">
                                     	<tr class="odd">
                                             <td class="center">
-                                            	<c:out value="${article.arnumber }"/>
+                                            	<c:out value="${article.arid }"/>
                                             </td>
                                             <td class="center">
                                             	<c:out value="${article.artitle }"/>
@@ -126,13 +127,16 @@
                                             	<c:out value="${article.aruser }"/>
                                             </td>
                                             <td class="center">
+                                            	<c:out value="${article.catalog.caname }"/>
+                                            </td>
+                                            <td class="center">
                                             	<c:out value="${article.arcontent }"/>
                                             </td>
                                             <td class="center">
                                             	<c:out value="${article.artime }"/>
                                             </td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_findById.action?arid=${article.arid }">编辑</a></td>
-                                            <td class="center"><a href="${pageContext.request.contextPath }/Manager_delete.action?arid=${article.arid }">删除</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Article_findById.action?arid=${article.arid }">编辑</a></td>
+                                            <td class="center"><a href="${pageContext.request.contextPath }/Article_delete.action?arid=${article.arid }">删除</a></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -141,10 +145,10 @@
                         </div>
                         <nav aria-label="Page navigation">
                             <ul class="pager">
-	                            <li id="frist"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                            <li id="pre"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                            <li id="next"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                          	<li id="last"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+	                            <li id="frist"><a href="${pageContext.request.contextPath }/Article_findAllPage.action" style="color: #EB5E28">首页</a></li>
+	                            <li id="pre"><a href="${pageContext.request.contextPath }/Article_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+	                            <li id="next"><a href="${pageContext.request.contextPath }/Article_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+	                          	<li id="last"><a href="${pageContext.request.contextPath }/Article_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -200,9 +204,6 @@
 
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 	<script src="assets/js/paper-dashboard.js"></script>

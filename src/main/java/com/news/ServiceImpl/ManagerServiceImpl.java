@@ -43,7 +43,7 @@ public class ManagerServiceImpl implements ManagerService{
 	@Override
 	public boolean addOrUpdate(Manager manager) {
 		
-		if(manager.getMid() == 0) {
+		if(manager.getMid() == 0 || manager.getMid() == null) {
 			return mdao.add(manager);
 		} else {
 			return mdao.update(manager);

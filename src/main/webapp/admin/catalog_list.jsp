@@ -138,10 +138,10 @@
                         </div>
                         <nav aria-label="Page navigation">
                             <ul class="pager">
-	                            <li id="frist"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action" style="color: #EB5E28">首页</a></li>
-	                            <li id="pre"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
-	                            <li id="next"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
-	                          	<li id="last"><a href="${pageContext.request.contextPath }/Manager_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
+	                            <li id="frist" class="disabled"><a href="${pageContext.request.contextPath }/Catalog_findAllPage.action" style="color: #EB5E28">首页</a></li>
+	                            <li id="pre" class="disabled"><a href="${pageContext.request.contextPath }/Catalog_findAllPage.action?page=${pageBean.page-1 }" style="color: #EB5E28">上一页</a></li>
+	                            <li id="next" class="disabled"><a href="${pageContext.request.contextPath }/Catalog_findAllPage.action?page=${pageBean.page+1 }" style="color: #EB5E28">下一页</a></li>
+	                          	<li id="last" class="disabled"><a href="${pageContext.request.contextPath }/Catalog_findAllPage.action?page=${pageBean.pageCount }" style="color: #EB5E28">末页</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -197,9 +197,6 @@
 
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 	<script src="assets/js/paper-dashboard.js"></script>

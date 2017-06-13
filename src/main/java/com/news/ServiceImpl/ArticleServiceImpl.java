@@ -1,5 +1,8 @@
 package com.news.ServiceImpl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -34,7 +37,13 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public boolean addOrUpdate(Article article) {
 		
-		if(article.getArid() == 0){
+		if(article.getArid() == null || article.getArid() == 0){
+			
+			Date date=new Date();
+			DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String time=format.format(date);
+			
+			article.setArtime(time);
 			return aDao.add(article);
 		} else {
 			return aDao.update(article);

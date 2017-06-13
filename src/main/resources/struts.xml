@@ -46,6 +46,7 @@
 	        <result name="login">/admin/login.jsp</result>
 	        <result name="mlist" type="redirectAction">Manager_findAllPage</result>
 	        <result name="clist" type="redirectAction">Catalog_findAll</result>
+	        <result name="alist" type="redirectAction">findAllPage</result>
 	    </global-results>
 	    
 		<action name="index">
@@ -61,6 +62,11 @@
 		<action name="Catalog_*" class="CatalogAction" method="{1}">
 		    <result name="findall">/admin/catalog_list.jsp</result>
 		    <result name="edit">/admin/caAddOrUpdate.jsp</result>
+		</action>
+		
+		<action name="Article_*" class="articleAction" method="{1}">
+		    <result name="findallpage">/admin/article_list.jsp</result>
+		    <result name="edit">/admin/arAddOrUpdate.jsp</result>
 		</action>
 		
 	</package>
