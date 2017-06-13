@@ -45,12 +45,7 @@
                         <p>栏目列表</p>
                     </a>
                 </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="ti-map"></i>
-                        <p>图片管理</p>
-                    </a>
-                </li>
+                
                 <!-- 
                 <li>
                     <a href="notifications.html">

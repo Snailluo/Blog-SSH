@@ -76,6 +76,10 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		this.uploadFileName = uploadFileName;
 	}
 	
+	private String iou;
+	public void setIou(String iou) {
+		this.iou = iou;
+	}
 	
 	public String login() {
 		
@@ -125,6 +129,11 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 			
 			manager.setManagerIcon(iconName);
 			
+		}
+		
+		if(iou.equals("info")){
+			mService.addOrUpdate(manager);
+			return "info";
 		}
 		
 		if(mService.addOrUpdate(manager)){

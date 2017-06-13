@@ -188,6 +188,8 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">修改</button>
                                         <input type="hidden" name="mid" value="${manager.mid}" />
+                                        <input type="hidden" name="iou" value="info" />
+                                        <input type="hidden" name="managerIcon" value="${manager.managerIcon }" />
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>
