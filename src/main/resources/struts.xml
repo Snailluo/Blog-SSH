@@ -50,7 +50,7 @@
 	    </global-results>
 	    
 		<action name="index">
-			<result type="dispatcher">/admin/login.jsp</result>
+			<result type="dispatcher">frist.jsp</result>
 		</action>
 	    
 		<action name="Manager_*" class="managerAction"  method="{1}">
@@ -68,6 +68,11 @@
 		<action name="Article_*" class="articleAction" method="{1}">
 		    <result name="findallpage">/admin/article_list.jsp</result>
 		    <result name="edit">/admin/arAddOrUpdate.jsp</result>
+		</action>
+		
+		<action name="Web_*" class="webAction" method="{1}">
+		    <result name="index">index.jsp</result>
+		    <result name="article">article.jsp</result>
 		</action>
 		
 	</package>
