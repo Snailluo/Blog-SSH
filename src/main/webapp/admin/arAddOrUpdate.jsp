@@ -136,6 +136,7 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">确定</button>
                                         <input type="hidden" name="arid" value="${article.arid}" />
+                                        <input type="hidden" name="artime" value="${article.artime}" />
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>

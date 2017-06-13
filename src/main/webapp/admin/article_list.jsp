@@ -66,7 +66,7 @@
                                         	<th>文章作者</th>
                                         	<th>所属栏目</th>
                                         	<th>文章大概内容</th>
-                                        	<th>文章创建时间</th>
+                                        	<th>最后修改时间</th>
                                         	<th colspan="2">编辑</th>
                                         </tr>
                                     </thead>

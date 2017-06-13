@@ -37,13 +37,13 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public boolean addOrUpdate(Article article) {
 		
+		Date date=new Date();
+		DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time=format.format(date);
+		
+		article.setArtime(time);
+		
 		if(article.getArid() == null || article.getArid() == 0){
-			
-			Date date=new Date();
-			DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			String time=format.format(date);
-			
-			article.setArtime(time);
 			return aDao.add(article);
 		} else {
 			return aDao.update(article);
