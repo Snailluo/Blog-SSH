@@ -1,10 +1,13 @@
 package com.news.action;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -57,6 +60,22 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return pageBean;
 	}
 	
+	//上传文件
+	private File upload;
+	private String uploadFileName;
+	public File getUpload() {
+		return upload;
+	}
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+	
 	
 	public String login() {
 		
@@ -91,7 +110,23 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return "info";
 	}
 	
-	public String addOrUpdate() {
+	public String addOrUpdate() throws IOException {
+		
+		if(upload != null){
+			
+			int i = uploadFileName.lastIndexOf(".");
+			String ext = uploadFileName.substring(i+1);
+			
+			String iconName = manager.getManagerName()+"_icon"+"."+ext;
+			
+			File serviceFile = new File("E:\\SSHImg"+"/"+iconName);
+			
+			FileUtils.copyFile(upload, serviceFile);
+			
+			manager.setManagerIcon(iconName);
+			
+		}
+		
 		if(mService.addOrUpdate(manager)){
 			return "mlist";
 		}

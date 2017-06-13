@@ -53,7 +53,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">管理员列表</a>
+                    <a class="navbar-brand" href="#">栏目列表</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -97,8 +97,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Striped Table</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">
+                                	<a href="${pageContext.request.contextPath }/Catalog_toAdd.action" style="color: #EB5E28">新增栏目</a>
+                                </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-striped">

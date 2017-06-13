@@ -17,5 +17,6 @@
         <property name="managerName" column="managerName"></property>
         <property name="managerPwd" column="managerPwd"></property>
         <property name="managerMstate" column="managerMstate"></property>
+        <property name="managerIcon" column="managerIcon"></property>
     </class>
 </hibernate-mapping>

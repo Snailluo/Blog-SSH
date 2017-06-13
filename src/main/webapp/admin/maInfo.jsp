@@ -103,7 +103,7 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                  <img class="avatar border-white" src="assets/img/faces/face-2.jpg" alt="..."/>
+                                  <img class="avatar border-white" src="http://localhost:8080/images/${manager.managerIcon }" alt="..."/>
                                   <h4 class="title"><c:out value="${manager.managerName }"></c:out><br />
                                      <a href="#"><small>@admin</small></a>
                                   </h4>
@@ -136,7 +136,8 @@
                                 <h4 class="title">Insert or Updata</h4>
                             </div>
                             <div class="content">
-                                <form method="post" action="${pageContext.request.contextPath }/Manager_addOrUpdate.action">
+                                <form method="post" enctype="multipart/form-data"
+                                	action="${pageContext.request.contextPath }/Manager_addOrUpdate.action">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -156,7 +157,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>用户状态</label>
                                                 <select class="form-control" name="managerMstate">
@@ -173,6 +174,14 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>用户头像</label>
+                                                <input type="file" name="upload" />
+                                            </div>
+                                        </div>
+                                        
                                     </div>
 
 

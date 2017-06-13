@@ -9,7 +9,7 @@
     <constant name="struts.objectFactory" value="spring" />
     
     <!-- 模式为开发模式，修改xml配置文件会自动重启，项目交付的时候设置为false,以免影响性能 -->
-    <constant name="struts.devMode" value="true" />
+    <constant name="struts.devMode" value="false" />
     <constant name="struts.configuration.xml.reload" value="true" />
     
     <!-- struts2的默认常量 -->

@@ -97,8 +97,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Striped Table</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">
+                                	<a href="${pageContext.request.contextPath }/Manager_toAdd.action" style="color: #EB5E28">新增管理员</a>
+                                </h4>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-striped">

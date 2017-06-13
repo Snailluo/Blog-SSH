@@ -5,6 +5,8 @@ public class Manager {
 	private String managerName;
 	private String managerPwd;
 	private String managerMstate;
+	private String managerIcon;
+	
 	public Manager() {
 		super();
 	}
@@ -36,5 +38,11 @@ public class Manager {
 	}
 	public void setManagerMstate(String managerMstate) {
 		this.managerMstate = managerMstate;
+	}
+	public String getManagerIcon() {
+		return managerIcon;
+	}
+	public void setManagerIcon(String managerIcon) {
+		this.managerIcon = managerIcon;
 	}
 }
