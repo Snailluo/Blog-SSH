@@ -15,8 +15,9 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="main.jsp">
+                <!-- <li class="active"> -->
+                <li>
+                    <a href="${pageContext.request.contextPath }/admin/main.jsp">
                         <i class="ti-panel"></i>
                         <p>首页</p>
                     </a>
