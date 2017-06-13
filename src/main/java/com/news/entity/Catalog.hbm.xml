@@ -22,7 +22,7 @@
         	用SET标签表示栏目下的所有文章
         	name属性：为栏目实体类中表示所有文章的set集合的名称
         -->
-        <set name="setArticle">
+        <set name="setArticle" inverse="true" cascade="delete">
             <key column="canumber"></key>
             <one-to-many class="com.news.entity.Article"/>
         </set>

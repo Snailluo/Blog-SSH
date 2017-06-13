@@ -58,7 +58,7 @@ public class CatalogAction extends ActionSupport implements ModelDriven<Catalog>
 	
 	public String delete() {
 		cService.delete(catalog);
-		return "list";
+		return "clist";
 	}
 	
 	public String toAdd() {
