@@ -92,6 +92,14 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return "login";
 	}
 	
+	public String logout() {
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.getSession().removeAttribute("managerName");
+		return "login";
+		
+	}
+	
 	public String findAll() {
 		
 		mList = mService.findAll();
