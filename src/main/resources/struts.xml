@@ -77,6 +77,7 @@
 		    <result name="index">index.jsp</result>
 		    <result name="article">article.jsp</result>
 		    <result name="articleList">articleList.jsp</result>
+		    <result name="search">articleList.jsp</result>
 		</action>
 		
 	</package>

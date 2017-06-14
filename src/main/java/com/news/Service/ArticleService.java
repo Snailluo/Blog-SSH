@@ -12,5 +12,6 @@ public interface ArticleService {
 	boolean addOrUpdate(Article article);
 	boolean delete(Article article);
 	PageBean findAllLimit(Integer page, int pageSize);
+	PageBean search(String key, Integer page, int pageSize);
 	
 }

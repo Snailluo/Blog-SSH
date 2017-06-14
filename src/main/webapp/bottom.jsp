@@ -1,4 +1,5 @@
-﻿		<hr class="featurette-divider">
+﻿<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+		<hr class="featurette-divider">
 
 		<div class="container">
 			<p class="pull-right">

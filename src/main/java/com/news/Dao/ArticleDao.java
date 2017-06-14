@@ -22,4 +22,6 @@ public interface ArticleDao {
 
 	List<Article> findLimit(int begin, int pageSize);
 	
+	List<Article> search(String key, int begin, int pageSize);
+	
 }

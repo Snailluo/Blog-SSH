@@ -88,4 +88,20 @@ public class ArticleServiceImpl implements ArticleService {
 		return new PageBean(pageCount, page, count, list);
 	}
 
+	
+
+	@Override
+	public PageBean search(String key, Integer page, int pageSize) {
+		
+		int count = aDao.findCount();
+		int pageCount;
+		
+		pageCount = (count % pageSize == 0) ? (count/pageSize) : (count/pageSize + 1);
+		
+		int begin = (page-1)*pageSize;
+		List<Article> list = aDao.search(key, begin, pageSize);
+		
+		return new PageBean(pageCount, page, count, list);
+	}
+
 }

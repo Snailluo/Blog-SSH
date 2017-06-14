@@ -164,5 +164,9 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 		return "edit";
 	}
 	
+	public String toBack() {
+		return "main";
+	}
+	
 
 }

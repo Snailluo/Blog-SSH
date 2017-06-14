@@ -3,6 +3,7 @@ package com.news.DaoImpl;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.news.Dao.ArticleDao;
@@ -62,6 +63,16 @@ public class ArticleDaoImpl extends HibernateDaoSupport implements ArticleDao{
 	@SuppressWarnings("unchecked")
 	public List<Article> findLimit(int begin, int pageSize) {
 		DetachedCriteria criteria = DetachedCriteria.forClass(Article.class);
+		List<Article> list = 
+				(List<Article>) this.getHibernateTemplate().findByCriteria(criteria, begin, pageSize);
+		return list;
+	}
+
+	@SuppressWarnings("all")
+	@Override
+	public List<Article> search(String key, int begin, int pageSize) {
+		DetachedCriteria criteria = DetachedCriteria.forClass(Article.class);
+		criteria.add(Restrictions.like("artitle", "%"+key+"%"));
 		List<Article> list = 
 				(List<Article>) this.getHibernateTemplate().findByCriteria(criteria, begin, pageSize);
 		return list;
