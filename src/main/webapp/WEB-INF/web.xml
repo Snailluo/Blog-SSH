@@ -37,6 +37,9 @@
   <filter-mapping>
     <filter-name>struts2</filter-name>
     <url-pattern>/*</url-pattern>
+    <dispatcher>INCLUDE</dispatcher>
+	<dispatcher>REQUEST</dispatcher>  
+	<dispatcher>FORWARD</dispatcher>
   </filter-mapping>
   
   <welcome-file-list>

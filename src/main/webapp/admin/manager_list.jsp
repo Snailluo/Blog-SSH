@@ -62,6 +62,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>头像</th>
                                         	<th>Name</th>
                                         	<th>Password</th>
                                         	<th>Mstate</th>
@@ -74,6 +75,9 @@
                                     	<tr class="odd">
                                             <td class="center">
                                             	<c:out value="${manager.mid }"/>
+                                            </td>
+                                            <td class="center">
+                                            	<img class="avatar border-white" src="http://localhost:8080/images/${manager.managerIcon }" alt="..."/>
                                             </td>
                                             <td class="center">
                                             	<c:out value="${manager.managerName }"/>

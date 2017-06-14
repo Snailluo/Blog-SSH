@@ -81,7 +81,7 @@ public class ArticleAction extends ActionSupport implements ModelDriven<Article>
 	
 	public String delete() {
 		aService.delete(article);
-		return "";
+		return "alist";
 	}
 	
 

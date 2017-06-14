@@ -71,6 +71,9 @@
 		</action>
 		
 		<action name="Web_*" class="webAction" method="{1}">
+		
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
 		    <result name="index">index.jsp</result>
 		    <result name="article">article.jsp</result>
 		</action>
