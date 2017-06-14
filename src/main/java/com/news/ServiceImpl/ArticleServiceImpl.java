@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
 
@@ -68,6 +70,20 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		int begin = (page-1)*pageSize;
 		List<Article> list = aDao.findLimit(begin, pageSize);
+		
+		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
+		
+		for (Article article : list) {
+			
+			Pattern pattern = Pattern.compile(regxpForHtml);   
+	        Matcher matcher = pattern.matcher(article.getArcontent());
+	        String s = matcher.replaceAll("");
+	        if(s.length()>10){
+	        	s = s.substring(0, 10);
+	        }
+	        article.setArcontent(s);
+	        
+		}
 		
 		return new PageBean(pageCount, page, count, list);
 	}
