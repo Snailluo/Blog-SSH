@@ -77,7 +77,7 @@
                                             	<c:out value="${manager.mid }"/>
                                             </td>
                                             <td class="center">
-                                            	<img class="avatar border-white" src="http://localhost:8080/images/${manager.managerIcon }" alt="..."/>
+                                            	<img class="avatar border-white" src="images/${manager.managerIcon }" alt="..."/>
                                             </td>
                                             <td class="center">
                                             	<c:out value="${manager.managerName }"/>

@@ -131,7 +131,11 @@ public class ManagerAction extends ActionSupport implements ModelDriven<Manager>
 			
 			String iconName = manager.getManagerName()+"_icon"+"."+ext;
 			
-			File serviceFile = new File("E:\\SSHImg"+"/"+iconName);
+			//获得tomcat项目路径中
+			String path = ServletActionContext.getServletContext().getRealPath("/images");
+//			String path = "E:\\SSHimg";
+			
+			File serviceFile = new File(path+"/"+iconName);
 			
 			FileUtils.copyFile(upload, serviceFile);
 			

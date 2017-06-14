@@ -28,6 +28,10 @@ public class Article {
 		this.arcontent = arcontent;
 		this.aruser = aruser;
 	}
+	public Article(String arcontent) {
+		super();
+		this.arcontent = arcontent;
+	}
 	public Article() {
 		super();
 	}

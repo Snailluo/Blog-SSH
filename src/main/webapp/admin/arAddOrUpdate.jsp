@@ -108,13 +108,13 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>文章内容</label>
-                                                	<!-- 
-                                                    <textarea name="arcontent" rows="5" class="form-control border-input" 
-                                                    	placeholder="Here can be your description" value="Mike" ><c:out value="${article.arcontent }"/></textarea>
-                                                    -->
+                                                	
+                                                    <textarea id="container" name="arcontent" ></textarea>
+                                                    <!-- 
                                                     <script id="container" name="content" type="text/plain">
 														
 													</script>
+													-->
                                             </div>
                                         </div>
                                     </div>
@@ -214,10 +214,18 @@
     <script type="text/javascript" src="utf8-jsp/ueditor.all.js"></script>
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
+    
         var editor = UE.getEditor('container', {
         	initialFrameWidth:[1000],
         	initialFrameHeight:[400]
         });
+        
+        var outputContent = "${article.arcontent }";
+        
+        editor.ready(function() {
+			editor.setContent(outputContent);
+		});
+        
     </script>
 
 </html>

@@ -57,7 +57,7 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                  <img class="avatar border-white" src="http://localhost:8080/images/${manager.managerIcon }" alt="..."/>
+                                  <img class="avatar border-white" src="images/${manager.managerIcon }" alt="..."/>
                                   <h4 class="title"><c:out value="${manager.managerName }"></c:out><br />
                                      <a href="#"><small>@admin</small></a>
                                   </h4>
