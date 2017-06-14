@@ -50,7 +50,7 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 col-md-7">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Insert or Updata</h4>
@@ -108,8 +108,13 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>文章内容</label>
+                                                	<!-- 
                                                     <textarea name="arcontent" rows="5" class="form-control border-input" 
                                                     	placeholder="Here can be your description" value="Mike" ><c:out value="${article.arcontent }"/></textarea>
+                                                    -->
+                                                    <script id="container" name="content" type="text/plain">
+														
+													</script>
                                             </div>
                                         </div>
                                     </div>
@@ -197,13 +202,22 @@
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
 
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 	<script src="assets/js/paper-dashboard.js"></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
+	
+	<!-- 配置文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var editor = UE.getEditor('container', {
+        	initialFrameWidth:[1000],
+        	initialFrameHeight:[400]
+        });
+    </script>
 
 </html>

@@ -42,12 +42,20 @@ public class WebAction extends ActionSupport implements ModelDriven<Article>{
 	}
 	
 	public String index(){
-		pageBean = aService.findAllLimit(page);
+		int pageSize = 3;
+		pageBean = aService.findAllLimit(page, pageSize);
 		return "index";
 	}
+	
 	public String article(){
 		article = aService.findById(article);
 		return "article";
+	}
+	
+	public String articleList(){
+		int pageSize = 10;
+		pageBean = aService.findAllLimit(page, pageSize);
+		return "articleList";
 	}
 	
 

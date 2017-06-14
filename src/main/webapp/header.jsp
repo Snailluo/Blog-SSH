@@ -1,17 +1,17 @@
 ﻿		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Logo</a>
+					<a class="navbar-brand" href="${pageContext.request.contextPath }/Web_index.action">Logo</a>
 				</div>
 				<ul class="nav navbar-nav" role="tablist">
-					<li class="active">
-						<a href="index.jsp">首页</a>
+					<li>
+						<a href="${pageContext.request.contextPath }/Web_index.action">首页</a>
 					</li>
 					<li>
-						<a href="articleList.jsp">文章</a>
+						<a href="${pageContext.request.contextPath }/Web_articleList.action">文章</a>
 					</li>
 					<li>
-						<a href="articleList.jsp">图片</a>
+						<a href="${pageContext.request.contextPath }/admin/login.jsp">后台</a>
 					</li>
 				</ul>
 				<form class="navbar-form navbar-right" role="search">

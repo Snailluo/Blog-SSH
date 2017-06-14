@@ -59,10 +59,9 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public PageBean findAllLimit(Integer page) {
+	public PageBean findAllLimit(Integer page, int pageSize) {
 		
 		int count = aDao.findCount();
-		int pageSize = 10;
 		int pageCount;
 		
 		pageCount = (count % pageSize == 0) ? (count/pageSize) : (count/pageSize + 1);

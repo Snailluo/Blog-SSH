@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Document</title>
+		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
 	</head>
 	<body>

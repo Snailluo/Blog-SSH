@@ -5,7 +5,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>
+		<c:out value="${article.artitle }"></c:out>
+	</title>
 	<link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
 </head>
 <body>

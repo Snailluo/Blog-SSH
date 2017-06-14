@@ -59,7 +59,8 @@ public class ArticleAction extends ActionSupport implements ModelDriven<Article>
 	}
 
 	public String findAllPage(){
-		pageBean = aService.findAllLimit(page);
+		int pageSize = 10;
+		pageBean = aService.findAllLimit(page, pageSize);
 		return "findallpage";
 	}
 
