@@ -60,10 +60,29 @@ public class ArticleAction extends ActionSupport implements ModelDriven<Article>
 		return alist;
 	}
 
+	@SuppressWarnings("unchecked")
 	public String findAllPage(){
+		
+		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
 		
 		int pageSize = 10;
 		pageBean = aService.findAllLimit(page, pageSize);
+		
+		List<Article> htmlList = pageBean.getList();
+		
+		for (Article article : htmlList) {
+			
+			Pattern pattern = Pattern.compile(regxpForHtml);   
+	        Matcher matcher = pattern.matcher(article.getArcontent());
+	        String s = matcher.replaceAll("");
+	        if(s.length()>10){
+	        	s = s.substring(0, 10);
+	        }
+	        article.setArcontent(s);
+			
+		}
+		
+		pageBean.setList(htmlList);
 		
 		return "findallpage";
 	}

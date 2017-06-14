@@ -19,9 +19,9 @@
 					<c:out value="${article.artitle }"></c:out>
 				</h1>
 			</div>
-			<p>
-				<c:out value="${article.arcontent }"></c:out>
-			</p>
+			<div>
+				<c:out value="${article.arcontent }"  escapeXml="false"></c:out>
+			</div>
 		</div>
 	</div>
 	<jsp:include page="bottom.jsp" />

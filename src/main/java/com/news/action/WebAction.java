@@ -1,5 +1,9 @@
 package com.news.action;
 
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -41,9 +45,26 @@ public class WebAction extends ActionSupport implements ModelDriven<Article>{
 		return article;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String index(){
+		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
 		int pageSize = 3;
 		pageBean = aService.findAllLimit(page, pageSize);
+		List<Article> htmlList = pageBean.getList();
+		
+		for (Article article : htmlList) {
+			
+			Pattern pattern = Pattern.compile(regxpForHtml);   
+	        Matcher matcher = pattern.matcher(article.getArcontent());
+	        String s = matcher.replaceAll("");
+	        if(s.length()>10){
+	        	s = s.substring(0, 10);
+	        }
+	        article.setArcontent(s);
+			
+		}
+		
+		pageBean.setList(htmlList);
 		return "index";
 	}
 	
@@ -52,9 +73,27 @@ public class WebAction extends ActionSupport implements ModelDriven<Article>{
 		return "article";
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String articleList(){
+		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
 		int pageSize = 10;
 		pageBean = aService.findAllLimit(page, pageSize);
+		List<Article> htmlList = pageBean.getList();
+		
+		for (Article article : htmlList) {
+			
+			Pattern pattern = Pattern.compile(regxpForHtml);   
+	        Matcher matcher = pattern.matcher(article.getArcontent());
+	        String s = matcher.replaceAll("");
+	        if(s.length()>10){
+	        	s = s.substring(0, 10);
+	        }
+	        article.setArcontent(s);
+			
+		}
+		
+		pageBean.setList(htmlList);
+		
 		return "articleList";
 	}
 	

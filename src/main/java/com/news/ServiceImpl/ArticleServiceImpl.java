@@ -71,19 +71,19 @@ public class ArticleServiceImpl implements ArticleService {
 		int begin = (page-1)*pageSize;
 		List<Article> list = aDao.findLimit(begin, pageSize);
 		
-		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
-		
-		for (Article article : list) {
-			
-			Pattern pattern = Pattern.compile(regxpForHtml);   
-	        Matcher matcher = pattern.matcher(article.getArcontent());
-	        String s = matcher.replaceAll("");
-	        if(s.length()>10){
-	        	s = s.substring(0, 10);
-	        }
-	        article.setArcontent(s);
-	        
-		}
+//		String regxpForHtml = "<([^>]*)>"; // 过滤所有以<开头以>结尾的标签
+//		
+//		for (Article article : list) {
+//			
+//			Pattern pattern = Pattern.compile(regxpForHtml);   
+//	        Matcher matcher = pattern.matcher(article.getArcontent());
+//	        String s = matcher.replaceAll("");
+//	        if(s.length()>10){
+//	        	s = s.substring(0, 10);
+//	        }
+//	        article.setArcontent(s);
+//	        
+//		}
 		
 		return new PageBean(pageCount, page, count, list);
 	}
