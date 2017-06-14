@@ -220,7 +220,7 @@
         	initialFrameHeight:[400]
         });
         
-        var outputContent = "${article.arcontent }";
+        var outputContent = '${article.arcontent }';
         
         editor.ready(function() {
 			editor.setContent(outputContent);
