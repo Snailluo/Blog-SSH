@@ -1,14 +1,14 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<title>简洁大气快速登录注册模板</title> 
+<title>登录</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="style/js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="style/js/login.js"></script>
 <link href="style/css/login2.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1>简洁大气快速登录注册模板</h1>
+<h1>后台登录</h1>
 
 <div class="login" style="margin-top:50px;">
     
